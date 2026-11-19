@@ -1,0 +1,98 @@
+/* Палітра: шкала обсмаження зерна + червоний колір кавової вишні */
+:root {
+  --r1: #a8693a;
+  --r2: #7a4526;
+  --r3: #4a2a17;
+  --r4: #1c120d;
+  --cherry: #d62839;
+}
+
+[data-bs-theme="light"] { --bs-body-bg: #f6f4f1; --bs-body-color: #1c120d; }
+[data-bs-theme="dark"]  { --bs-body-bg: #150d09; --bs-body-color: #efe6dc; }
+
+body { font-family: 'Onest', system-ui, sans-serif; }
+
+h1, h2, h3, h4, h5, .brand {
+  font-family: 'Unbounded', system-ui, sans-serif;
+  letter-spacing: -.02em;
+}
+
+section { scroll-margin-top: 70px; }
+
+.h-sec {
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -.04em;
+  margin-bottom: 1.5rem;
+}
+
+/* Допоміжні кольори */
+.bg-r1 { background: var(--r1); }
+.bg-r2 { background: var(--r2); }
+.bg-r3 { background: var(--r3); }
+.bg-r4 { background: var(--r4); }
+.bg-cherry { background: var(--cherry); }
+.bg-espresso { background: var(--r4); }
+.text-cherry { color: var(--cherry); }
+
+/* Перевизначення Bootstrap */
+.btn { border-radius: 99px; }
+.btn-primary {
+  --bs-btn-bg: var(--cherry);
+  --bs-btn-border-color: var(--cherry);
+  --bs-btn-hover-bg: #b81f2f;
+  --bs-btn-hover-border-color: #b81f2f;
+  --bs-btn-active-bg: #a01b29;
+  --bs-btn-active-border-color: #a01b29;
+}
+.progress { --bs-progress-bar-bg: var(--cherry); }
+.form-control:focus, .form-select:focus {
+  border-color: var(--cherry);
+  box-shadow: 0 0 0 .25rem rgba(214, 40, 57, .2);
+}
+.accordion {
+  --bs-accordion-active-bg: rgba(214, 40, 57, .08);
+  --bs-accordion-active-color: var(--cherry);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 .25rem rgba(214, 40, 57, .2);
+}
+
+/* Шапка: фон змінюється слайдером */
+.hero { background: var(--r3); color: #fff; transition: background .5s; }
+.hero .brand {
+  font-size: clamp(3.4rem, 15vw, 10rem);
+  font-weight: 800;
+  line-height: .9;
+  letter-spacing: -.06em;
+}
+
+/* Слайдер обсмаження */
+.form-range::-webkit-slider-runnable-track {
+  height: .9rem; border-radius: 1rem; border: 2px solid rgba(255, 255, 255, .6);
+  background: linear-gradient(90deg, var(--r1), var(--r2), var(--r3), var(--r4));
+}
+.form-range::-moz-range-track {
+  height: .9rem; border-radius: 1rem; border: 2px solid rgba(255, 255, 255, .6);
+  background: linear-gradient(90deg, var(--r1), var(--r2), var(--r3), var(--r4));
+}
+.form-range::-webkit-slider-thumb {
+  background: var(--cherry); width: 1.6rem; height: 1.6rem; margin-top: -.45rem; border: 3px solid #fff;
+}
+.form-range::-moz-range-thumb {
+  background: var(--cherry); width: 1.6rem; height: 1.6rem; border: 3px solid #fff;
+}
+
+/* Картки меню */
+.card { border: 2px solid var(--bs-border-color); border-radius: 1.25rem; overflow: hidden; }
+.card-img-top { height: 200px; object-fit: cover; background: var(--r2); }
+.card-title { font-size: 1.05rem; font-weight: 800; }
+.roast-meter { height: 8px; }
+
+.block { color: #fff; }
+.month-progress { max-width: 320px; }
+.month-progress .progress { height: 1.4rem; }
+
+/* Слайди каруселі */
+.slide {
+  height: 240px; display: flex; align-items: center; justify-content: center;
+  text-align: center; color: #fff; padding: 1.5rem;
+}
